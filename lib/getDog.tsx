@@ -12,8 +12,10 @@ export async function getDog(): Promise<Breed> {
     };
       
     try {
+        // Add a timestamp to prevent caching
+        const timestamp = new Date().getTime(); //to get random dog bc didnt work when deployed
         const response = await fetch(
-            "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=1&order=RAND&page=0&limit=1", 
+            `https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=1&order=RAND&page=0&limit=1&_=${timestamp}`, 
             requestOptions
         );
         
