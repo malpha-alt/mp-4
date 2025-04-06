@@ -1,13 +1,8 @@
 import { getDogById } from "../../../lib/getDogById";
 import DogDetail from "@/components/DogDetail";
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
 
-export default async function DogPage({ params }: PageProps) {
+export default async function DogPage({ params }: { params: { id: string } }) {
   const breed = await getDogById(params.id);
   
   return (
