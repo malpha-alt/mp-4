@@ -1,6 +1,5 @@
 import { getDogById } from "../../../lib/getDogById";
 import DogDetail from "@/components/DogDetail";
-import { Metadata, ResolvingMetadata } from 'next';
 
 interface Props {
   params: { id: string };
