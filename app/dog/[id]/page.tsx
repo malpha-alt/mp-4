@@ -1,11 +1,11 @@
 import { getDogById } from "../../../lib/getDogById";
 import DogDetail from "@/components/DogDetail";
 
-interface Props {
+interface PageProps {
   params: { id: string };
 }
 
-export default async function DogPage({ params }: Props) {
+export default async function DogPage({ params }: PageProps) {
   const { id } = params;
   const breed = await getDogById(id);
 
