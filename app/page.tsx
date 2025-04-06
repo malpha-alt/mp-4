@@ -1,5 +1,4 @@
 import DogView from "@/components/DogView";
-import { Breed } from "../types";
 import { getDog } from "@/lib/getDog";
 
 export default async function Home() {
