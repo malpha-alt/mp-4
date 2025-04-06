@@ -8,7 +8,14 @@ export async function getDog(): Promise<Breed> {
       
     const requestOptions = {
         method: 'GET',
-        headers: headers
+        headers: {
+            "Content-Type": "application/json",
+            "x-api-key": process.env.DOG_API_KEY || "",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            "Pragma": "no-cache"
+        },
+        cache: 'no-store' as RequestCache,
+        next: { revalidate: 0 }
     };
       
     try {

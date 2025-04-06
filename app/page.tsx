@@ -1,6 +1,9 @@
 import DogView from "@/components/DogView";
 import { getDog } from "@/lib/getDog";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function Home() {
   const breed = await getDog();
 
