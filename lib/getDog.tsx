@@ -1,10 +1,6 @@
 import { Breed } from "../types";
 
 export async function getDog(): Promise<Breed> {
-    const headers = new Headers({
-        "Content-Type": "application/json",
-        "x-api-key": process.env.DOG_API_KEY || ""
-    });
       
     const requestOptions = {
         method: 'GET',
