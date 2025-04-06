@@ -1,6 +1,7 @@
 import { getDogById } from "../../../lib/getDogById";
 import DogDetail from "@/components/DogDetail";
 
+
 type Params = Promise<{
   id: string
 }>;
