@@ -1,6 +1,7 @@
 'use client';
 
 import { Breed } from "../types";
+import Image from "next/image";
 
 export default function DogView({ breed }: { breed: Breed }) {
   // Get image URL from either the root or image object
@@ -12,10 +13,12 @@ export default function DogView({ breed }: { breed: Breed }) {
     <div className="flex flex-col items-center w-[100% m-auto p-4">
       <div className="flex flex-col items-center w-[50%]">
         {imageUrl && (
-          <img
+          <Image
             src={imageUrl}
             alt={breed.name}
             className="w-64 h-64 object-cover rounded-lg mb-4"
+            width={256}
+            height={256}
           />
         )}
       </div>

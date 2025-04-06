@@ -1,6 +1,7 @@
 "use client";
 
 import { Breed } from "../types";
+import Image from "next/image";
 
 export default function DogDetail({ breed }: { breed: Breed }) {
   // Get image URL from either the root or image object
@@ -18,10 +19,12 @@ export default function DogDetail({ breed }: { breed: Breed }) {
         <h1 className="text-2xl font-bold  text-white my-4">{breed.name}</h1>
       </div>
       <div className="flex flex-row w-[90%] rounded-lg shadow-lg my-6">
-        <img
-          src={imageUrl}
+        <Image
+          src={imageUrl || ''}
           alt={breed.name}
           className="w-[40%] h-auto object-cover rounded-lg"
+          width={256}
+          height={256}
         />
         <div className=" grid grid-cols-2 items-center my-10 mx-auto w-[50%]">
           <div className="flex flex-col">

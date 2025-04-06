@@ -1,13 +1,13 @@
 import { getDogById } from "../../../lib/getDogById";
 import DogDetail from "@/components/DogDetail";
 
-type Props = {
+type PageProps = {
   params: {
     id: string;
   };
 };
 
-export default async function DogPage({ params }: Props) {
+export default async function DogPage({ params }: PageProps) {
   const breed = await getDogById(params.id);
   
   return (
